@@ -1,8 +1,6 @@
 ---
 title: "Final Project Data"
-output: 
-  html_document: 
-    keep_md: yes
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
@@ -118,7 +116,8 @@ longitudinal %>% #Observing the change between visits in n_wbv of the converted 
   filter(group=="Converted") %>% 
   ggplot(aes(x=visit,y=n_wbv,color=subject_id))+ 
   geom_point()+
-  geom_line()
+  geom_line()+
+  theme(legend.position = "none")
 ```
 ```{r}
 longitudinal %>% #Observing the change between visits in n_wbv of the converted group
@@ -136,6 +135,3 @@ longitudinal %>% #Observing the change between visits in n_wbv of the converted 
   geom_line()+
   theme(legend.position = "none")
 ```
-
-
-
